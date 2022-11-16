@@ -34,25 +34,32 @@ export interface SwitchSwitchProps {
 
 SwitchSwitch.displayName = "Switch.Switch";
 
-export function SwitchSwitch({className}: SwitchSwitchProps) {
+export function SwitchSwitch({ className }: SwitchSwitchProps) {
   return (
-    <div className={clsx(
-      "w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-400 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-200 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-cyan-300"
-      , className
-      )} />
+    <div
+      className={clsx(
+        "w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-400 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-200 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-cyan-300",
+        className
+      )}
+    />
   );
 }
 
-export interface SwitchTextProps {
+export interface SwitchLabelProps
+  extends InputHTMLAttributes<HTMLLabelElement> {
   children: string;
   className?: string;
 }
 
-SwitchText.displayName = "Switch.Text";
+SwitchLabel.displayName = "Switch.Label";
 
-export function SwitchText({ children, className }: SwitchTextProps) {
+export function SwitchLabel({ children, className }: SwitchLabelProps) {
   return (
-    <span className={clsx("ml-2 text-sm font-medium text-gray-200", className)}>{children}</span>
+    <label
+      className={clsx("ml-2 text-sm font-medium select-none text-gray-200", className)}
+    >
+      {children}
+    </label>
   );
 }
 
@@ -60,5 +67,5 @@ export const Switch = {
   Root: SwitchRoot,
   Checkbox: SwitchCheckbox,
   Switch: SwitchSwitch,
-  Text: SwitchText
-}
+  Label: SwitchLabel,
+};

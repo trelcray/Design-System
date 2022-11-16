@@ -1,100 +1,101 @@
-import axios from 'axios'
-import { Envelope, Lock } from 'phosphor-react'
-import { FormEvent, useState } from 'react'
-import { Button } from '../components/Button'
-import { Checkbox } from '../components/Checkbox'
-import { Heading } from '../components/Heading'
-import { Logo } from '../components/Logo'
-import { Text } from '../components/Text'
-import { TextInput } from '../components/TextInput'
+import axios from "axios";
+import { Envelope, Lock } from "phosphor-react";
+import { FormEvent, useState } from "react";
+import { Button } from "../components/Button";
+import { Checkbox } from "../components/Checkbox";
+import { Heading } from "../components/Heading";
+import { Logo } from "../components/Logo";
+import { Text } from "../components/Text";
+import { TextInput } from "../components/TextInput";
 
 export function SignIn() {
-    const [isUserSignedIn, setIsUserSignedIn] = useState(false);
+  const [isUserSignedIn, setIsUserSignedIn] = useState(false);
 
-    async function handleSignIn(event: FormEvent) {
-        event.preventDefault()
+  async function handleSignIn(event: FormEvent) {
+    event.preventDefault();
 
-        await axios.post('/sessions', {
-            email: 'thaliszambarda@gmail.com',
-            password: '12345',
-        })
-        
-        setIsUserSignedIn(true)
-    }
+    await axios.post("/sessions", {
+      email: "thaliszambarda@gmail.com",
+      password: "12345",
+    });
 
-    return (
-        <div className='w-screen h-screen bg-gray-900 flex flex-col items-center justify-center text-gray-100'>
-        <header className='flex flex-col items-center'>
-            <Logo className='mb-0' />
+    setIsUserSignedIn(true);
+  }
 
-            <Heading size='lg'>
-                Ignite Lab
-            </Heading>
+  return (
+    <div className="w-screen h-screen bg-gray-900 flex flex-col items-center justify-center text-gray-100">
+      <header className="flex flex-col items-center">
+        <Logo className="mb-0" />
 
-            <Text size='lg' className='text-gray-400 mt-3'>
-                Faça login e comece a usar!
-            </Text>
-        </header>
+        <Heading size="lg">Ignite Lab</Heading>
 
-        <form onSubmit={handleSignIn} className='flex flex-col gap-4 items-stretch w-full max-w-[400px] mt-6'>
-            { isUserSignedIn && <Text>Login realizado!</Text>}
+        <Text size="lg" className="text-gray-400 mt-3">
+          Faça login e comece a usar!
+        </Text>
+      </header>
 
-            <label htmlFor="email" className='flex flex-col gap-3'>
-                <Text className='font-semibold'>
-                    Endereço de e-mail
-                </Text>
+      <form
+        onSubmit={handleSignIn}
+        className="flex flex-col gap-4 items-stretch w-full max-w-[400px] mt-6"
+      >
+        {isUserSignedIn && <Text>Login realizado!</Text>}
 
-                <TextInput.Root>
-                    <TextInput.Icon>
-                        <Envelope />
-                    </TextInput.Icon>
+        <label htmlFor="email" className="flex flex-col gap-3">
+          <Text className="font-semibold">Endereço de e-mail</Text>
 
-                    <TextInput.Input id='email' type='email' placeholder='Digite seu e-mail' />
-                </TextInput.Root>
-            </label>
+          <TextInput.Root>
+            <TextInput.Icon>
+              <Envelope />
+            </TextInput.Icon>
 
-            <label htmlFor="password" className='flex flex-col gap-3'>
-                <Text className='font-semibold'>
-                    Sua senha
-                </Text>
+            <TextInput.Input
+              id="email"
+              type="email"
+              placeholder="Digite seu e-mail"
+            />
+          </TextInput.Root>
+        </label>
 
-                <TextInput.Root>
-                    <TextInput.Icon>
-                        <Lock />
-                    </TextInput.Icon>
+        <label htmlFor="password" className="flex flex-col gap-3">
+          <Text className="font-semibold">Sua senha</Text>
 
-                    <TextInput.Input id='password' type='password' placeholder='*********' />
-                </TextInput.Root>
-            </label>
+          <TextInput.Root>
+            <TextInput.Icon>
+              <Lock />
+            </TextInput.Icon>
 
-            <label htmlFor="remember" className='flex items-center gap-2'>
-                <Checkbox id='remember' />
-                <Text size='sm' className='text-gray-200'>
-                    Lembrar de mim por 30 dias
-                </Text>
-            </label>
+            <TextInput.Input
+              id="password"
+              type="password"
+              placeholder="*********"
+            />
+          </TextInput.Root>
+        </label>
 
-            <Button type='submit' className='mt-4'>
-                Entrar na plataforma
-            </Button>
+        <label htmlFor="remember" className="flex items-center gap-2">
+          <Checkbox id="remember" />
+          <Text size="sm" className="text-gray-200">
+            Lembrar de mim por 30 dias
+          </Text>
+        </label>
 
-        </form>
+        <Button.Root className="mt-4">
+          <Button.Button type="submit">Entrar na plataforma</Button.Button>
+        </Button.Root>
+      </form>
 
-        <footer className='flex flex-col items-center gap-4 mt-8'>
-            <Text asChild size='sm'>
-                <a href="" className='text-gray-400 underline hover:text-gray-200'>
-                    Esqueceu sua senha?
-                </a>
-            </Text>
-            <Text asChild size='sm'>
-
-                <a href="" className='text-gray-400 underline hover:text-gray-200'>
-                    Não possui uma conta? Crie uma agora!
-                </a>
-            </Text>
-
-        </footer>
-
+      <footer className="flex flex-col items-center gap-4 mt-8">
+        <Text asChild size="sm">
+          <a href="" className="text-gray-400 underline hover:text-gray-200">
+            Esqueceu sua senha?
+          </a>
+        </Text>
+        <Text asChild size="sm">
+          <a href="" className="text-gray-400 underline hover:text-gray-200">
+            Não possui uma conta? Crie uma agora!
+          </a>
+        </Text>
+      </footer>
     </div>
-    )
+  );
 }

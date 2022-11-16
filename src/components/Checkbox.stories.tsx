@@ -1,6 +1,5 @@
 import { Meta, StoryObj} from '@storybook/react';
 import { Checkbox, CheckboxProps } from "./Checkbox";
-import { Text } from './Text';
 
 export default {
     title: 'components/Checkbox',
@@ -12,7 +11,7 @@ export default {
             return (
                 <div className='flex items-center gap-2'>
                     {Story()}
-                    <Text size='sm'>lembrar de mim por 30 dias </Text>
+                    <label className='text-gray-100 select-none'>lembrar de mim por 30 dias </label>
                 </div>
             )
         }

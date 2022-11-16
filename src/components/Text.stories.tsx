@@ -13,23 +13,45 @@ export default {
             options: [ 'sm', 'md', 'lg' ],
             control: {
                 type:'inline-radio',
-            }
+            },
         },
     }
 } as Meta<TextProps>;
 
-export const Default: StoryObj<TextProps> = {};
+export const Default: StoryObj<TextProps> = {
+    argTypes: {
+        children: {
+          table: {
+              disable: true,
+          }
+      },
+    },
+};
 
 export const Small: StoryObj<TextProps> = {
     args: {
         size:'sm',
+    },
+    argTypes: {
+        children: {
+          table: {
+              disable: true,
+          }
+      },
     },
 };
 
 export const Large: StoryObj<TextProps> = {
     args: {
         size: 'lg',
-    }
+    },
+    argTypes: {
+        children: {
+          table: {
+              disable: true,
+          }
+      },
+    },
 };
 
 export const CustomComponent: StoryObj<TextProps> = {

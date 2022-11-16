@@ -1,10 +1,10 @@
-import { themes } from '@storybook/theming';
-import { initialize, mswDecorator } from 'msw-storybook-addon';
+import { themes } from "@storybook/theming";
+import { initialize, mswDecorator } from "msw-storybook-addon";
 
-import '../src/styles/global.css';
+import "../src/styles/global.css";
 
 initialize({
-  onUnhandledRequest: 'bypass',
+  onUnhandledRequest: "bypass",
 });
 
 export const decorators = [mswDecorator];
@@ -17,8 +17,7 @@ export const parameters = {
       date: /Date$/,
     },
   },
-    docs: {
-      theme: themes.dark
-    }
-  
-}
+  docs: {
+    theme: themes.dark,
+  },
+};
