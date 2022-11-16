@@ -7,7 +7,7 @@ export interface IProgressProps extends ProgressPrimitive.ProgressProps {
 
 export const Progress = ({ className, ...props }: IProgressProps) => {
   return (
-    <ProgressPrimitive.Root className="h-3 w-full overflow-hidden rounded-full bg-white dark:bg-gray-900" {...props}>
+    <ProgressPrimitive.Root className="h-3 w-full overflow-hidden rounded-full bg-gray-100 dark:bg-gray-900" {...props}>
       <ProgressPrimitive.Indicator
         className={clsx("h-full bg-green-500 origin-left animate-progress", className)}
       />
