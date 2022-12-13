@@ -1,6 +1,6 @@
 import * as ToastPrimitive from "@radix-ui/react-toast";
 import clsx from "clsx";
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 
 export interface IToastProviderProps extends ToastPrimitive.ToastProps {
   children?: ReactNode;
@@ -12,6 +12,7 @@ export function ToastProvider({ children, ...props }: IToastProviderProps) {
   return (
     <ToastPrimitive.Provider swipeDirection="right" {...props}>
       {children}
+      <ToastPrimitive.Viewport />
     </ToastPrimitive.Provider>
   );
 }
@@ -86,7 +87,7 @@ export function ToastDescription({
 }: IToastDescriptionProps) {
   return (
     <ToastPrimitive.Description
-      className={clsx("px-2 mb-3", className)}
+      className={clsx("mb-3 mt-1", className)}
       asChild
     >
       {children}

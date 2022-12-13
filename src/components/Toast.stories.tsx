@@ -49,9 +49,16 @@ export const Default: Story<IToastProviderProps> = (args) => {
           Active Toast
         </Button.Button>
       </Button.Root>
-      <Toast.Root open={open} onOpenChange={setOpen}>
-        <div className="flex w-full p-2 justify-between">
-          <Toast.Title>Successfully created</Toast.Title>
+      <Toast.Root open={open} className="p-2" onOpenChange={setOpen}>
+        <div className="flex w-full pt-2 pb-4 justify-between">
+          <Toast.Title className="font-bold">
+            <div className="flex justify-start w-full gap-2 items-center">
+              <Button.Icon className="flex justify-center items-center bg-green-100 rounded-xl">
+                <CheckCircle className="text-green-500" />
+              </Button.Icon>
+              <p>Successfully created</p>
+            </div>
+          </Toast.Title>
           <Toast.Action>
             <div>
               <Button.Icon>
@@ -59,14 +66,6 @@ export const Default: Story<IToastProviderProps> = (args) => {
               </Button.Icon>
             </div>
           </Toast.Action>
-          <Toast.Description>
-            <div className="flex justify-start w-full gap-2 items-center">
-              <Button.Icon className="flex justify-center items-center bg-green-100 rounded-xl">
-                <CheckCircle className="text-green-500" />
-              </Button.Icon>
-              <p>Successfully created</p>
-            </div>
-          </Toast.Description>
         </div>
         <Progress />
       </Toast.Root>
