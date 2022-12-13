@@ -1,0 +1,2 @@
+import{_ as a}from"./index.module.91792b7b.js";import{r}from"./index.e35787a0.js";import{$ as o}from"./index.module.f7f81d97.js";const f=r.exports.forwardRef((e,t)=>r.exports.createElement(o.span,a({},e,{ref:t,style:{position:"absolute",border:0,width:1,height:1,padding:0,margin:-1,overflow:"hidden",clip:"rect(0, 0, 0, 0)",whiteSpace:"nowrap",wordWrap:"normal",...e.style}}))),s=f;export{f as $,s as a};
+//# sourceMappingURL=index.module.adfa65ae.js.map

@@ -1,0 +1,2 @@
+var e=Object.defineProperty;var $=(a,t)=>e(a,"name",{value:t,configurable:!0});import{a as f,r as n}from"./index.e35787a0.js";import{d as s}from"./index.module.4248e7a2.js";const u=f["useId".toString()]||(()=>{});let b=0;function x(a){const[t,r]=n.exports.useState(u());return s(()=>{a||r(o=>o!=null?o:String(b++))},[a]),a||(t?`radix-${t}`:"")}$(x,"$1746a345f3d73bb7$export$f680877a34711e37");export{x as $};
+//# sourceMappingURL=index.module.35dee1c5.js.map

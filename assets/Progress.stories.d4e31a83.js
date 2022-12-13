@@ -1,0 +1,2 @@
+import{P as r}from"./Progress.bdbf705f.js";import"./index.module.91792b7b.js";import"./index.e35787a0.js";import"./iframe.ee752c9a.js";import"./index.module.f7f81d97.js";import"./index.30c3bc24.js";import"./clsx.m.256e9345.js";import"./jsx-runtime.e85a9eef.js";const n={title:"components/Progress",component:r,args:{},argTypes:{children:{table:{disable:!0}}},decorators:[]},c={},l=["Default"];export{c as Default,l as __namedExportsOrder,n as default};
+//# sourceMappingURL=Progress.stories.d4e31a83.js.map
