@@ -2,6 +2,8 @@
 
 This application aims to learn about storybook and design system, guided by Rockeat Seat in the creation of figma until the Code.
 
+see the depoly at: https://trelcray.github.io/Design-System/
+
 ### features between them:
 
 - Storybook
